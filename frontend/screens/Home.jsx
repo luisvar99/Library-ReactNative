@@ -18,14 +18,8 @@ const Home = ({navigation}) => {
     const getAllCharacters = () => {
         axios.get('https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=ddfe019b90251df5d29164692a47ffba&hash=9b42bc5e90000c4aab1ce2f97299a703')
         .then((res)=>{ 
-            //console.log('RES.DATA ->'+ JSON.stringify(res.data));
             datac = (res.data.data.results);
             setCharacters(datac);
-            //console.log('CHARACTERS ->'+ characters)
-             
-            /* characters.map((ch)=>{
-                console.log(ch.id);  
-            }) */
         }).catch((error)=>{
             console.log('error -> ' + error)
         })
@@ -34,7 +28,6 @@ const Home = ({navigation}) => {
     }
 
     const renderItem = ({item}) => {
-        //console.log("character: " + item); 
         return <CharacterCard charac={item} navigation={navigation}/>
     }
  
@@ -43,7 +36,6 @@ const Home = ({navigation}) => {
             <Text style={styles.title}>Characters</Text>
 
             <FlatList
-                style={{backgroundColor:'red'}}
                 data={characters}
                 //keyExtractor={(book)=> book.id + ''}
                 renderItem={renderItem} 
@@ -57,12 +49,7 @@ const styles = StyleSheet.create({
     container:{
         backgroundColor:"#222f3e",
         flex:1,
-    },
-    button:{
-        backgroundColor: "red",
-        padding: 7,
-        width: "25%",
-        borderRadius: 10
+        alignItems:'center'
     },
     btnText: {
         textAlign: "center",

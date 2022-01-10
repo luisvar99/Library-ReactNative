@@ -22,9 +22,9 @@ const CharacterCard = ({charac, navigation}) => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         alignItems:"center",
-        marginTop: 30
+        marginTop: 30,
+        padding: 5
     },
     img: {
         width: 150,
@@ -33,6 +33,13 @@ const styles = StyleSheet.create({
     text:{
         color: '#ffffff',
         fontSize: 20
+    },
+    btnText:{
+        color: '#ffffff',
+        fontSize: 20
+    },
+    button:{
+
     }
 })
 
